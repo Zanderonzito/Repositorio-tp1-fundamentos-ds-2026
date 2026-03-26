@@ -52,6 +52,14 @@ def bubble_sort(notas, orden):
              nueva_lista[contador_2 + 1] = temporal    
    return nueva_lista        
 
+def calcular_mediana(notas):
+   lista_ordenada = bubble_sort(notas, 1)
+   largo_lista = calcular_largo(lista_ordenada)
+   if largo_lista % 2 == 0:
+        mediana = (lista_ordenada[int(largo_lista/2) - 1] + lista_ordenada[int(largo_lista/2)]) / 2
+   else:
+        mediana = (lista_ordenada[int(largo_lista/2)])    
+   return mediana
 
 
 orden = int(input("ingresa 1 (ascendentemente) o 0 (descendentemente)"))
@@ -61,3 +69,4 @@ print(calcular_promedio(notas))
 print(calcular_minimo(notas))
 print(calcular_maximo(notas))
 print(bubble_sort(notas, orden))
+print(calcular_mediana(notas))
