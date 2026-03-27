@@ -1,6 +1,5 @@
 
 #### Tengo la variable student por que me confundia mucho escribiendo estudiante sin S
-
 estudiantes = [
 {"nombre": "Ana", "notas": [6.5, 7.0, 5.8]},
 {"nombre": "Luis", "notas": [4.2, 5.1, 6.0]},
@@ -23,9 +22,7 @@ estudiantes = [
 {"nombre": "Vicente", "notas": [3.7, 4.0, 4.3]},
 {"nombre": "Paula", "notas": [6.3, 6.4, 6.5]}]
 
-
 #Ejercicio 2A
-
 def promedio_estudiante(student):
     
     notas = student["notas"] 
@@ -41,7 +38,6 @@ def clasificar_rendimiento(promedio):
         return "Aprobado"
     else:
         return "Destacado"
-
 
 # Retorna lista de dicts: nombre, promedio, estado, nota_max, nota_min, rango.
 def generar_reporte(student):
@@ -61,14 +57,9 @@ def generar_reporte(student):
             "nota minima": nota_minima,
             "rango de notas": round(rango_de_notas, 2)
         })
-        
     return Reporte
-
-
-
-
+    
 # Ejercicio 2B
-
 def contar_por_estado(reporte):
     conteo = {}
     for estudiante in reporte:
@@ -86,11 +77,7 @@ def filtrar_por_estado(reporte, estado):
     
     return lista
 
-
 # Ejercicio 2C
-
-
-
 Reporte = generar_reporte(estudiantes)
 
 print("Reporte: ")
@@ -100,7 +87,7 @@ for r in Reporte:
 print("Conteo por estado: ")
 print(contar_por_estado(Reporte))
 
-print("\nSolo aprovados:")
-aprovados = filtrar_por_estado(Reporte, "Aprovado")
-for student in aprovados:
+print("\nSolo aprobados:")
+aprobados = filtrar_por_estado(Reporte, "Aprobado")
+for student in aprobados:
     print(student)
