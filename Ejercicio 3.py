@@ -1,6 +1,6 @@
 #Restricción: Todos los ejercicios deben resolverse con Python básico. No se permite el uso de librerías externas (NumPy, Pandas, etc.).
 #Clean Code: Cada función debe tener docstring, nombres en snake_case, código legible y modular.
-
+#Ejercicio 3: Análisis de Frecuencias y Texto 
 estudiantes = [
     {"nombre": "Ana","notas":[6.5, 7.0, 5.8]},
     {"nombre": "Luis","notas":[4.2, 5.1, 6.0]},
