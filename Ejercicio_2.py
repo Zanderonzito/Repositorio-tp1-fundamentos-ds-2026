@@ -34,11 +34,11 @@ def promedio_estudiante(student):
 def clasificar_rendimiento(promedio):
 
     if promedio < 4.0:
-        return "Reprovbado"
+        return "Reprobado"
     elif promedio < 5.0:
         return "Suficiente"
     elif promedio < 6.0:
-        return "Aprovado"
+        return "Aprobado"
     else:
         return "Destacado"
 
