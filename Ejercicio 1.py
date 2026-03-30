@@ -87,14 +87,51 @@ def reporte_estadistico(ciudades):
       print()
       print("Temperatura minima:",calcular_minimo(temperaturas))
 
+def obtener_datos(datos):
+   while True:
+      camino = input("Si desea usar datos personalizadas presione 1, si quiere usar datos por defecto presione 0\n")
+      if camino == "1":
+         nueva_lista = []
+         while True:
+            entrada = input("Ingresa un numero (presione x para salir):")
+            if entrada == "x":
+               break
+            try:
+               dato = float(entrada)
+               nueva_lista.append(dato)
+            except ValueError:
+                print("solo numeros")
+         return nueva_lista
+         break
+      elif camino == "0":
+         return datos
+         break
 
+      
 
-orden = int(input("ingresa 1 (ascendentemente) o 0 (descendentemente)"))
-print(calcular_suma(notas))
-print(calcular_largo(notas))
-print(calcular_promedio(notas))
-print(calcular_minimo(notas))
-print(calcular_maximo(notas))
-print(bubble_sort(notas, orden))
-print(calcular_mediana(notas))
-print(celcius_a_fahrenheit(grados_c))
+print("***********Notas***********")
+lista = obtener_datos(notas)
+print("***********Grados***********") 
+temperatura = obtener_datos(grados_c)
+
+orden = int(input("ingresa 1 (ascendentemente) o 0 (descendentemente)\n"))
+print("")
+print("1a) Funciones básicas\n ")
+print("Funcion calcular_suma:",calcular_suma(lista))
+print("Funcion calcular_largo:",calcular_largo(lista))
+print("Funcion calcular_promedio:",calcular_promedio(lista))
+print("Funcion calcular_minimo:",calcular_minimo(lista))
+print("Funcion calcular_maximo:",calcular_maximo(lista))
+print("")
+print("1b) Ordenamiento Bubble Sort \n ")
+print("lista ordenada:",bubble_sort(lista, orden))
+print("")
+print("1c) Mediana y Desviación Estándar ")
+print(calcular_mediana(lista))
+print("")
+print("1d) Conversión de Temperaturas")
+print(celcius_a_fahrenheit(temperatura))
+print("")
+print("1e) Reporte Estadístico Integrado")
+reporte_estadistico(ciudades)
+
