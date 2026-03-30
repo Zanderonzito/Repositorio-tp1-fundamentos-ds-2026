@@ -19,7 +19,7 @@ def calcular_largo(datos):
     return contador  
  
 def calcular_promedio(datos):
-   return calcular_suma(datos)/calcular_largo(datos)
+   return round(calcular_suma(datos)/calcular_largo(datos))
 
 def calcular_minimo(datos):
     minimo = 999
@@ -65,13 +65,13 @@ def calcular_mediana(datos):
         mediana = (lista_ordenada[int(largo_lista/2)])    
    return mediana
 
-def calcular_desviacion_estandar(notas):
-   promedio = calcular_promedio(notas)
+def calcular_desviacion_estandar(datos):
+   promedio = calcular_promedio(datos)
    suma = 0
-   for elemento in notas:
+   for elemento in datos:
       diferencia = elemento - promedio
       suma = suma + diferencia * diferencia
-   varianza = suma / calcular_largo(notas)
+   varianza = suma / calcular_largo(datos)
    return round(varianza ** 0.5)
 
 
