@@ -84,26 +84,21 @@ def filtrar_por_estado(reporte, estado):
 def ordenar_reporte(reporte, clave='promedio', descendente=True):
     registro = list(reporte)
     n = len(registro)
-
     for iteracion in range(1, n):
         actual = registro[iteracion]
         valor = actual[clave]
         posicion = iteracion - 1
-
         while posicion >= 0:
             if not descendente:
                 condicion = registro[posicion][clave] > valor
             else:
                 condicion = registro[posicion][clave] < valor
-
             if condicion:
                 registro[posicion + 1] = registro[posicion]
                 posicion -= 1
             else:
                 break
-
         registro[posicion + 1] = actual
-
     return registro
 
 #||||||||||||||||||||||||Ejercicio 2D|||||||||||||||||||||
